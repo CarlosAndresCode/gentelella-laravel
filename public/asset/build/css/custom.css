@@ -1422,7 +1422,7 @@ a:hover, a:focus {
 
 .site_title:hover, .site_title:focus {
   text-decoration: none; }
-  
+
 .site_title span:hover{
   background: #fff;
 }
@@ -3999,7 +3999,7 @@ ul.project_files li a i {
   font-size: 35px; }
 
 /* *********  /ecommerce  **************************** */
-/** login **/
+/** auth **/
 .login {
   background: #F7F7F7; }
 
@@ -4057,7 +4057,7 @@ a.hiddenanchor {
   animation-timing-function: ease;
   animation-fill-mode: both; }
 
-/** /login **/
+/** /auth **/
 /** signup **/
 .login_box {
   padding: 20px;

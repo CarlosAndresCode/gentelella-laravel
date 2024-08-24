@@ -15478,13 +15478,13 @@ window.disk_usage_tree =
             },
             {
                 "value": 144,
-                "name": "login.framework",
-                "path": "PrivateFrameworks/login.framework",
+                "name": "auth.framework",
+                "path": "PrivateFrameworks/auth.framework",
                 "children": [
                     {
                         "value": 132,
                         "name": "Versions",
-                        "path": "PrivateFrameworks/login.framework/Versions"
+                        "path": "PrivateFrameworks/auth.framework/Versions"
                     }
                 ]
             },

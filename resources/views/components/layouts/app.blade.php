@@ -30,7 +30,7 @@
                 <div class="clearfix"></div>
 
                 <!-- menu profile quick info -->
-                <x-partials.profile-info nameUser="Carlos Andres"></x-partials.profile-info>
+                <x-partials.profile-info nameUser="{{ Auth::user()->name }}"></x-partials.profile-info>
                 <!-- /menu profile quick info -->
 
                 <!-- sidebar menu -->
