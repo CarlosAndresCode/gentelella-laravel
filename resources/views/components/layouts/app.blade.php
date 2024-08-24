@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/ico" />
-    <title> Sistem - Dashboard </title>
+    <title> System - {{ $titlePage ?? ''}} </title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('asset/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -49,7 +49,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            @yield('content')
+            {{ $slot }}
         </div>
         <!-- /page content -->
 

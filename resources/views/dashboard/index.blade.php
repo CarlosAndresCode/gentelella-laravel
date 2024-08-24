@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app title-page="Dashboard">
     <div class="">
         <div class="page-title">
             <div class="title_left">
@@ -29,4 +27,4 @@
             </div>
         </div>
     </div>
-@endsection
+</x-layouts.app>

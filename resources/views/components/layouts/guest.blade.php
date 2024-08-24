@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sistem - Login</title>
+    <title>System - {{ $titlePage ?? '' }}</title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('asset/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -22,6 +22,6 @@
 </head>
 
 <body class="login">
-    @yield('content')
+   {{ $slot }}
 </body>
 </html>
