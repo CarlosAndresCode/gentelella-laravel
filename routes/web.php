@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+// Module User
+Route::middleware(['auth', 'verified'])->group(function () {
+
+
+    Route::get('users', [RegisteredUserController::class, 'index'])
+        ->name('users.index');
+
+    Route::get('users/create', [RegisteredUserController::class, 'createUser'])->name('users.create');
+
+    Route::post('users/create', [RegisteredUserController::class, 'storeUser'])->name('users.post');
+});

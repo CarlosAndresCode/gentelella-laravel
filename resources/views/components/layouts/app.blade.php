@@ -17,6 +17,9 @@
     <link href="{{ asset('asset/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ asset('asset/build/css/custom.min.css') }}" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="nav-md">
