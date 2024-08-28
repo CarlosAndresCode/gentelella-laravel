@@ -1,12 +1,14 @@
 <x-layouts.app title-page="Users">
     <div class="">
         <x-partials.page-title title="Users"></x-partials.page-title>
-        @if (session('status-user') === 'user-created')
+
+        @if (session('status-user') === 'user-created' || session('status-user') === 'user-updated')
             <div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <strong>{{ __('Saved...') }}</strong>
             </div>
         @endif
+
         <div class="row">
             <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel shadow-lg">
@@ -44,7 +46,10 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>
-                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                            <a href="{{ route('users.edit', $user) }}"
+                                               class="btn btn-primary btn-sm"
+                                                ><i class="fa fa-edit"></i> Edit
+                                            </a>
                                         </td>
                                     </tr>
                                 @endforeach
