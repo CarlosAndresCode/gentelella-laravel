@@ -7,7 +7,8 @@ use App\Http\Requests\Auth\StoreUserRequest;
 use App\Http\Requests\Auth\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Request;
 use Illuminate\View\View;
 
 class UserController extends Controller
@@ -17,7 +18,9 @@ class UserController extends Controller
      */
     public function index(): View
     {
-        $users = User::all();
+        $users = DB::table('users')
+            ->select('id', 'name', 'email', 'created_at')
+            ->get();
         return view('users.index', compact('users'));
     }
 
@@ -44,8 +47,9 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user): View
+    public function edit($id): View
     {
+        $user = User::findOrFail($id);
         return view('users.edit', compact('user'));
     }
 
@@ -64,8 +68,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function search(Request $request)
     {
-        //
+        $search = '%'.$request->get('search').'%';
+        $users = DB::table('users')
+            ->whereAny([
+                'name',
+                'email',
+            ], 'like', $search)
+            ->get();
+        return view('users.index', compact('users'));
     }
 }

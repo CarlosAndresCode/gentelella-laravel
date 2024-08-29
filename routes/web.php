@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
@@ -33,4 +32,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('users/{user}', [UserController::class, 'edit'])->name('users.edit');
 
     Route::put('users/{user}', [UserController::class, 'update'])->name('users.update');
+
+    Route::post('users/search', [UserController::class, 'search'])->name('users.search');
 });

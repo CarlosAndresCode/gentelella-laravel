@@ -13,7 +13,7 @@
             <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel shadow-lg">
                     <div class="x_title">
-                        <h2>Users list</h2>
+                        <h2>List</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li>
                                 <a href="{{ route('users.create') }}" class=""><i class="fa fa-user-plus"></i></a>
@@ -24,8 +24,8 @@
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="row col-md-4">
-                        <input type="search" name="search" id="search" class="form-control" placeholder="Search...">
+                    <div class="row col-md-6">
+                        <x-partials.search url="users.search"></x-partials.search>
                     </div>
                     <div class="x_content">
                         <table id="datatable" class="table table-hover" style="width:100%">
@@ -46,7 +46,7 @@
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->created_at }}</td>
                                         <td>
-                                            <a href="{{ route('users.edit', $user) }}"
+                                            <a href="{{ route('users.edit', $user->id) }}"
                                                class="btn btn-primary btn-sm"
                                                 ><i class="fa fa-edit"></i> Edit
                                             </a>
