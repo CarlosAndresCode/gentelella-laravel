@@ -10,9 +10,8 @@
                        required
                        name="name"
                 />
+                <x-input-error :messages="$errors->get('name')" class="mt-2 text-danger" />
             </div>
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-
             <div>
                 <input type="email"
                        class="form-control"
@@ -20,8 +19,8 @@
                        required
                        name="email"
                 />
+                <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
             </div>
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
             <div>
                 <input
@@ -31,8 +30,8 @@
                     required
                     name="password"
                 />
+                <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
             </div>
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <div>
                 <input
@@ -42,8 +41,8 @@
                     name="password_confirmation"
                     required autocomplete="new-password"
                 />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
             </div>
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
 
             <div>
                 <button type="submit" class="btn btn-default submit">Submit</button>
@@ -55,14 +54,7 @@
                 <p class="change_link">Already a member ?
                     <a href="#signin" class="to_register"> Log in </a>
                 </p>
-
                 <div class="clearfix"></div>
-                <br />
-
-                <div>
-                    <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                    <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 4 template. Privacy and Terms</p>
-                </div>
             </div>
         </form>
     </section>
