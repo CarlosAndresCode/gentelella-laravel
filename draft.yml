@@ -1,0 +1,49 @@
+models:
+  Document_Types:
+    id: int,
+    name: string,
+    active: boolean default true
+  Customers:
+    document_type: id foreign:Document_Types
+    document: string
+    fist_name: string
+    last_name: string
+    phone: nullable string
+    email: nullable string index
+    address: nullable string
+    relationships:
+      hasOne: Document_Types
+  Vehicles:
+    customer_id: id foreign:Customer
+    brand: string
+    model: string
+    year: string
+    license_place: string
+    relationships:
+      hasOne: Customer
+      hasMany: Transactions
+  Services:
+    name: string
+    description: string
+    price: decimal:10,2
+    active: boolean default true
+  Transactions:
+    vehicle_id: id foreign:Vehicles
+    service_id: id foreign:Services
+    date: timestamp
+    year: string
+    month: string
+    total: decimal:10,2
+    relationships:
+      hasOne: Vehicles, Services
+controllers:
+  Customer:
+    index:
+      query: all
+      render: customers.index
+    create:
+      render: customers.create
+    store:
+      validate: document_type, document, first_name, last_name
+      save: customer
+      redirect: customers.index

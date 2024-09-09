@@ -1,12 +1,12 @@
 <x-layouts.app title-page="Users">
     <div class="">
-        <x-partials.page-title title="Create new User"></x-partials.page-title>
+        <x-partials.page-title title="{{ __('Create new user') }}"></x-partials.page-title>
 
         <div class="row">
             <div class="col-md-12 col-sm-12  ">
                 <div class="x_panel shadow-lg">
                     <div class="x_title">
-                        <h2>Form</h2>
+                        <h2>{{ __('Form') }}</h2>
                         <ul class="nav navbar-right panel_toolbox">
                             <li>
                                 <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
